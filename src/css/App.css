@@ -1,0 +1,78 @@
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.App {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: auto;
+  width: min-content;
+  justify-content: center;
+  min-width: 50%;
+  max-width: 50%;
+}
+
+body {
+  background-color: rgb(232, 163, 14);
+  background-image: url('../img/pizza.png');
+  background-size: 10%;
+  animation: moveBackground 3600s linear infinite;
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: -10000% 10000%;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.PizzaButton {
+  position: relative;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  width: 60%;
+  left: 20%;
+  animation: rotate 10s linear infinite;
+}
+
+.PizzaButton img {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  image-rendering: pixelated;
+  filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.3));
+  transition: transform 0.05s ease-in-out;
+}
+
+.PizzaButton:hover img {
+  transform: scale(1.1);
+  filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.5));
+}
+
+.PizzaButton:active img {
+  transform: scale(1);
+  filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.3));
+}
+
+.pizzaCount {
+  color: rgb(190, 0, 0);
+  position: relative;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: rgb(240, 180, 20);
+  filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.3));
+}
