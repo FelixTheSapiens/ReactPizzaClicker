@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { fpsMeter } from './fpsMeter';
 import App from './modules/App';
+
+fpsMeter();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

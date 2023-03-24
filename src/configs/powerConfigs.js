@@ -5,6 +5,20 @@ export const powerConfigs = [
         name: 'FingerGuns™ Carrying License',
         img: '/img/fingerGuns.png',
         desc: 'You can now carry a powerfull and dangerous weapon. It will not only implant fear in hearths of your enemies, but also enhance your clicking abilities. What a steal!',
+        profit: 0.001,
+        price: 10000,
+        lvl: 0,
+
+        passive: false,
+        priceMod: 1.1,
+        profitMod: 1,
+        addPrice: 1,
+        addProfit: 0.1
+    },
+    {
+        name: 'FingerGuns™ Carrying License',
+        img: '/img/fingerGuns.png',
+        desc: 'You can now carry a powerfull and dangerous weapon. It will not only implant fear in hearths of your enemies, but also enhance your clicking abilities. What a steal!',
         profit: 0,
         price: 10,
         lvl: 0,

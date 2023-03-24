@@ -2,13 +2,22 @@
   display: none;
 }
 
+* {
+  user-select: none;
+}
+
+img {
+  -webkit-user-drag: none;
+  align-self: center;
+  image-rendering: pixelated;
+}
 .App {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'VT323', sans-serif;
   margin: auto;
   width: min-content;
   justify-content: center;
-  min-width: 50%;
-  max-width: 50%;
+  min-width: 80%;
+  max-width: 80%;
 }
 
 body {
@@ -16,6 +25,11 @@ body {
   background-image: url('../img/pizza.png');
   background-size: 10%;
   animation: moveBackground 3600s linear infinite;
+  padding: 0;
+}
+
+.noAnimation {
+  animation: none;
 }
 
 @keyframes moveBackground {
@@ -25,16 +39,6 @@ body {
 
   100% {
     background-position: -10000% 10000%;
-  }
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
   }
 }
 
@@ -52,27 +56,117 @@ body {
   position: relative;
   width: 100%;
   padding: 0;
-  image-rendering: pixelated;
-  filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0px 0.125rem 0.25rem rgba(0, 0, 0, 0.3));
   transition: transform 0.05s ease-in-out;
+  z-index: 1;
 }
 
 .PizzaButton:hover img {
   transform: scale(1.1);
-  filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0px 0.25rem 0.5rem rgba(0, 0, 0, 0.5));
 }
 
 .PizzaButton:active img {
   transform: scale(1);
-  filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0px 0.125rem 0.25rem rgba(0, 0, 0, 0.3));
 }
 
 .pizzaCount {
   color: rgb(190, 0, 0);
   position: relative;
   text-align: center;
-  border: 2px solid black;
-  border-radius: 5px;
+  border: 0.125rem solid black;
+  border-radius: 0.5rem;
   background-color: rgb(240, 180, 20);
+  filter: drop-shadow(0px 0.125rem 0.25rem rgba(0, 0, 0, 0.3));
+}
+
+@keyframes breathing {
+  0% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  50% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  100% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+.affordable {
+  animation: breathing 5s ease-out infinite normal;
+}
+
+.powerUp {
+  display: block;
+  background-color: rgb(240, 180, 20);
+  border: 0.125rem solid;
+  border-radius: 0.25rem;
+  filter: drop-shadow(0px 0.125rem 0.25rem rgba(0, 0, 0, 0.3));
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.powerUpDisabled {
+  background-color: rgb(50, 50, 50);
+  color: white;
+  border-color: black;
+}
+
+.powerUpDisabled h3, .powerUpDisabled h3, .powerUpDisabled p{
+  filter: grayscale(100%) brightness(30%) blur(0.2rem);
+}
+
+.powerUp div {
+  display: flex;
+}
+
+.powerUp h3 {
+  margin: 0.5rem 0 0 0.5rem;
+}
+
+.powerUp img {
+  border-color: black;
+  border: 0.125rem solid;
+  border-radius: 0.25rem;
+  width: -webkit-fill-available;
+  margin: 0 0.5rem 0 0.5rem;
   filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.3));
+}
+
+.powerUp p {
+  margin: 0 0.5rem 0 0;
+  font-size: 80%;
+}
+
+.powerUp h2 {
+  margin: 0 0.5rem 0.5rem 0;
+}
+
+.powerUp h6{
+  margin: 0.5rem;
+}
+
+.prices {
+  font-size: 80%;
+  justify-content: end;
+  word-break: break-all;
+}
+
+@media screen and (min-width: 800px) {
+  .prices {
+    font-size: 80%;
+  }
+
+  .App {
+    min-width: 50%;
+    max-width: 50%;
+  }
 }
