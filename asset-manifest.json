@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/ReactPizzaClicker/static/css/main.a63b4eeb.css",
+    "main.js": "/ReactPizzaClicker/static/js/main.3cc72c30.js",
+    "static/media/purchaseSound.mp3": "/ReactPizzaClicker/static/media/purchaseSound.c109ec79b89bd22697b4.mp3",
+    "static/media/clickSound.wav": "/ReactPizzaClicker/static/media/clickSound.3e307070c0d43972460c.wav",
+    "static/media/pizza.png": "/ReactPizzaClicker/static/media/pizza.7398c3f86cb84a70defa.png",
+    "index.html": "/ReactPizzaClicker/index.html",
+    "main.a63b4eeb.css.map": "/ReactPizzaClicker/static/css/main.a63b4eeb.css.map",
+    "main.3cc72c30.js.map": "/ReactPizzaClicker/static/js/main.3cc72c30.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a63b4eeb.css",
+    "static/js/main.3cc72c30.js"
+  ]
+}
