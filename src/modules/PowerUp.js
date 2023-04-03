@@ -1,12 +1,21 @@
 import purchaseSound from '../sounds/purchaseSound.mp3';
 import { playSound, nicelyRounded } from '../utils';
 import { useState, useEffect } from 'react';
+import fingerGuns from '../img/fingerGuns.png';
+import internCook from '../img/internCook.png';
+import oven  from '../img/oven.png';
 
 function PowerUp(props) {
   const hooks = props.hooks;
   const pizza = hooks.pizza;
   const click = hooks.click;
   const config = props.config;
+
+  const img = {
+    'fingerGuns' : fingerGuns,
+    'internCook' : internCook,
+    'oven' : oven
+  }
 
   const [locked, setLocked] = useState(true);
 
@@ -33,7 +42,7 @@ function PowerUp(props) {
     <div className={`powerUp ${locked && 'powerUpDisabled'} ${affordable ? 'affordable' : 'pricy'}`} onClick={tryBuy}>
       <h3>{config.name}</h3>
       <div>
-        <img src={config.img} />
+        <img src={img[config.img]} />
         <p>{config.desc}</p>
       </div>
       <div className='prices'>
