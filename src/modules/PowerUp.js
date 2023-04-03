@@ -1,9 +1,9 @@
 import purchaseSound from '../sounds/purchaseSound.mp3';
 import { playSound, nicelyRounded } from '../utils';
 import { useState, useEffect } from 'react';
-import fingerGuns from '/img/fingerGuns.png';
-import internCook from '/img/internCook.png';
-import oven  from '/img/oven.png';
+import fingerGuns from '../img/fingerGuns.png';
+import internCook from '../img/internCook.png';
+import oven  from '../img/oven.png';
 
 function PowerUp(props) {
   const hooks = props.hooks;
