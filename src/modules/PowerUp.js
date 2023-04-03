@@ -42,7 +42,7 @@ function PowerUp(props) {
     <div className={`powerUp ${locked && 'powerUpDisabled'} ${affordable ? 'affordable' : 'pricy'}`} onClick={tryBuy}>
       <h3>{config.name}</h3>
       <div>
-        <img src={img[config.img]} />
+        <img src={fingerGuns} />
         <p>{config.desc}</p>
       </div>
       <div className='prices'>
