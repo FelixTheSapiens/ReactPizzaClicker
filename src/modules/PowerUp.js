@@ -1,18 +1,39 @@
-import useState from "react";
+import purchaseSound from '../sounds/purchaseSound.mp3';
+import { playSound, nicelyRounded } from '../utils';
+import { useState, useEffect } from 'react';
 
 function PowerUp(props) {
-  const hooks = props.hooksList;
+  const hooks = props.hooks;
   const pizza = hooks.pizza;
+  const click = hooks.click;
   const config = props.config;
 
-  const unlocked = (pizza.highscore < config.price) && true;
-  const affordable = (pizza.count >= config.price) && true
+  const [locked, setLocked] = useState(true);
+
+  if (pizza.highscore >= config.price && locked) {
+    setLocked(false);
+  };
+
+  const affordable = (pizza.get >= config.price) && true;
+
+  const tryBuy = () => {
+    if (!affordable) return;
+
+    click.set(
+      config.lvl++,
+      config.profit = config.addProfit + (config.profit * config.profitMod),
+      previous => previous + config.profit,
+      pizza.set(count => count - config.price),
+      config.price = config.addPrice + (config.price * config.priceMod));
+
+    playSound(purchaseSound);
+  };
 
   return (
-    <div className={`powerUp ${unlocked && 'powerUpDisabled'} ${affordable && 'affordable'}`}>
+    <div className={`powerUp ${locked && 'powerUpDisabled'} ${affordable ? 'affordable' : 'pricy'}`} onClick={tryBuy}>
       <h3>{config.name}</h3>
       <div>
-        <img src={config.img}/>
+        <img src={config.img} />
         <p>{config.desc}</p>
       </div>
       <div className='prices'>
@@ -22,11 +43,11 @@ function PowerUp(props) {
         </div>
         <h6>Clicking power:</h6>
         <div>
-          <h2>{config.profit}</h2>
+          <h2>+{nicelyRounded(config.profit)}</h2>
         </div>
         <h6>Price:</h6>
         <div>
-          <h2>{config.price}</h2>
+          <h2>{nicelyRounded(config.price)}</h2>
         </div>
       </div>
     </div>

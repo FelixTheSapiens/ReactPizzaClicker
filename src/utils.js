@@ -3,6 +3,6 @@ export function nicelyRounded(naughtyNumber) {
 }
 
 export function playSound(sound) {
-  let audio = new Audio(sound);
+  const audio = new Audio(sound);
   audio.play();
 }

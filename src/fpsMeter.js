@@ -1,6 +1,6 @@
 var windowActive = true;
-window.addEventListener('focus', () => {windowActive = true});
 
+window.addEventListener('focus', () => {windowActive = true});
 window.addEventListener('blur', () => {windowActive = false});
 
 export function fpsMeter() {
@@ -15,6 +15,7 @@ export function fpsMeter() {
       prevTime = time;
       frames = 0;
 
+      //console.log(windowActive, (fps < 30 & windowActive));
       (fps < 30 & windowActive) && element.classList.add("noAnimation")
     }
 

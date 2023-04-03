@@ -11,6 +11,7 @@ img {
   align-self: center;
   image-rendering: pixelated;
 }
+
 .App {
   font-family: 'VT323', sans-serif;
   margin: auto;
@@ -101,11 +102,12 @@ body {
   }
 }
 
-.affordable {
+.affordable:active {
   animation: breathing 5s ease-out infinite normal;
 }
 
 .powerUp {
+  font-size: 1rem;
   display: block;
   background-color: rgb(240, 180, 20);
   border: 0.125rem solid;
@@ -114,13 +116,19 @@ body {
   margin: 0.5rem 0 0.5rem 0;
 }
 
+.pricy {
+  filter:  grayscale(100);
+}
+
 .powerUpDisabled {
   background-color: rgb(50, 50, 50);
   color: white;
   border-color: black;
 }
 
-.powerUpDisabled h3, .powerUpDisabled h3, .powerUpDisabled p{
+.powerUpDisabled h3,
+.powerUpDisabled h3,
+.powerUpDisabled p {
   filter: grayscale(100%) brightness(30%) blur(0.2rem);
 }
 
@@ -133,6 +141,9 @@ body {
 }
 
 .powerUp img {
+
+  min-width: 5rem;
+  max-width: 5rem;
   border-color: black;
   border: 0.125rem solid;
   border-radius: 0.25rem;
@@ -143,14 +154,13 @@ body {
 
 .powerUp p {
   margin: 0 0.5rem 0 0;
-  font-size: 80%;
 }
 
 .powerUp h2 {
   margin: 0 0.5rem 0.5rem 0;
 }
 
-.powerUp h6{
+.powerUp h6 {
   margin: 0.5rem;
 }
 
